@@ -1,0 +1,56 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Corso</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="container">
+
+        </div>
+        <div id="start">
+            <input type="text" value="http://www.mocky.io/v2/5a86fdcc3200006600f4e897"/>
+            <button>Get Nome Cognome</button>
+        </div>
+    </body>
+    <script>
+        var val1="";
+        var val2="";
+        var err;
+        $("button").click(function(){
+            url=$(this).siblings("input").val();
+            ajaxreq( "GET", url, successCase, errorCase )
+        });
+
+        function ajaxreq( method, url, successCase, errorCase ){
+                $.ajax({
+                method: method,
+                url: url,
+                success: successCase,
+                error: errorCase
+                })
+        }
+
+
+        function errorCase(data){
+            alert("errore");
+        };
+
+        function successCase(data){
+            for (a=0;a<data.users.length;a++){
+                user=data.users[a].name;
+                email=data.users[a].email;
+                myhtml="<div class='row'><div class='col-md-4'>USER: "+ user + " EMAIL: " + email + "</div><div class='col-md-6'><button name='"+email+"'onclick='alert(this.name)'>e-mail</button></div></div>";
+                $("#container").append(myhtml)
+                $("#start").hide();
+            }
+        };
+
+    </script>
+</html>

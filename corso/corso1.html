@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+ 
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <title>Corso</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-8">
+                    <input id="pi" type="text" style=form-control"/>
+                </div>
+                <div class="col-md-4">
+                    <button type"button" class="btn btn-primary" onclick="pippo('pi')">invia</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input id="si" type="text" style=form-control"/>
+                </div>
+                <div class="col-md-4">
+                    <button type"button" class="btn btn-primary" onclick="pippo('si')">invia</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input id="ti" type="text" style=form-control"/>
+                </div>
+                <div class="col-md-4">
+                    <button ype"button" class="btn btn-primary" onclick="pippo('ti')">invia</button>
+                </div>
+            </div>
+        </div>
+    </body>
+<script>
+    function pippo(id){
+        alert($("#"+id).val());
+    }
+</script>
+</html>

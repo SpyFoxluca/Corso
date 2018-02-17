@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="names=[{name:'Jani',country:'Norway', eta: 15},{name:'Hege',country:'Sweden', eta: 45},{name:'Kai',country:'Denmark', eta: 5}]">
+
+	<div ng-repeat="n in names" ng-if="n.eta<20"><p>{{n.name + " - " + n.country}}</p></div>
+
+</div>
+
+</body>
+</html>

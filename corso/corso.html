@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+ 
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <title>Corso</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="fc">
+
+            <p id="ciao" class="classeciao">Ciao</p>
+
+            <p id="valerio">Che ore sono?</p>
+
+            <p>Caporaso</p>
+
+        </div>
+        <div id="sc">
+
+            <input type="text" id="ciaotext" class="classeciao"/>
+
+            <p>Alto livello</p>
+
+            <p id="valerio3">le 10:58</p>
+
+        </div>
+         <div id="tc">
+            <div>
+                <p>prova</p>
+                <p>Alto livello</p>
+            </div>
+            <p id="valerio2">le 10:58</p>
+
+        </div>
+        <button id="btnf">Premi pulsante</button> 
+        <button id="btns">Nacondi</button> 
+        <button id="btnt">Nacondi2</button>
+    </body>
+    <script>
+        function lanciAlert(){
+            alert($("#fc .classeciao").text() + " " + $("#sc .classeciao").val());
+        };
+        function hideSecondDiv(){
+            $("#tc").children("div").children(":nth-child(2)").hide();
+        };
+        function hideSibillingDiv(){
+            $("#valerio2").parent("div").prev().hide();
+        };
+
+        function buttonClickEvent(){
+            $("#btnf").click(lanciAlert);
+            $("#btns").click(hideSecondDiv)
+            $("#btnt").click(hideSibillingDiv)
+        };
+        $(document).ready(buttonClickEvent)
+
+    </script>
+</html>
